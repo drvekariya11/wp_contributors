@@ -119,7 +119,7 @@ class wp_contributors {
 		wp_nonce_field( 'wp_contributors_inner_custom_box', 'wp_contributors_inner_custom_box_nonce' );
 		
 		//get all authors list
-		$authors=get_users('role=author');
+		$authors=get_users(array('who' => 'authors'));
 		
 		// Use get_post_meta to retrieve an existing value from the database.
 		if (!$wp_contributors = get_post_meta( $post->ID, 'wp_contributors',true))
